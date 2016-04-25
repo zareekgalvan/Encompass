@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8BB3F39C-F5D2-4B5C-A0D1-E26EC17EB92A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Encompass</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="a Test\Program.cs" />
+    <Compile Include="a Test\ProgramTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="a Test\ProgramTest.Designer.cs">
+      <DependentUpon>ProgramTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="a Test\Test csv.cs" />
+    <Compile Include="a Test\Test Encompass.cs" />
+    <Compile Include="a Test\Test Treexxxcom.cs" />
+    <Compile Include="a Test\Test Treexxxlife.cs" />
+    <Compile Include="a Test\Test treexxxorg.cs" />
+    <Compile Include="ESS %28Encompass Information%29\ESS Encompass RP Spec.cs" />
+    <Compile Include="ESS %28Encompass Information%29\ESS Treexxxacc Accounts RP Spec.cs" />
+    <Compile Include="ESS %28Encompass Information%29\ESS Treexxxboj BusinessObject RP Spec.cs" />
+    <Compile Include="ESS %28Encompass Information%29\ESS Treexxxcom Company RP Spec.cs" />
+    <Compile Include="ESS %28Encompass Information%29\ESS Treexxxorg Organization RP Spec.cs" />
+    <Compile Include="z All In Memory Base RP Specs\AIM T RP Spec.cs" />
+    <Compile Include="z All In Memory Base\AIM Life1 boolIsDateIncluded.cs" />
+    <Compile Include="z All In Memory Base\AIM Life2 boolIsPeriodIncluded.cs" />
+    <Compile Include="z All In Memory Base\AIM Life3 boolIsPeriodNotIncluded.cs" />
+    <Compile Include="z All In Memory Base\AIM Life5 subAddPeriod.cs" />
+    <Compile Include="z All In Memory Base\AIM Life7 subRemovePeriod.cs" />
+    <Compile Include="zz EIS %28Encompass Infrastructure%29\EIS Imss Imss1 ImssNumeroAfiliacion class.cs" />
+    <Compile Include="zz EIS %28Encompass Infrastructure%29\EIS Rfc Rfc1 Rfc class.cs" />
+    <Compile Include="zz EIS %28Encompass Infrastructure%29\EIS Rpss Rpss1 Rpss... class.cs" />
+    <Compile Include="zz TIS\BboxBaseBoxingAbstract.cs" />
+    <Compile Include="zz TIS\BclassBaseClassAbstract.cs" />
+    <Compile Include="zz TIS\BclassmutabilityEnum.cs" />
+    <Compile Include="zz TIS\BtupleBaseTupleAbstract.cs" />
+    <Compile Include="zz TIS\Obool.cs" />
+    <Compile Include="zz TIS\Ochar.cs" />
+    <Compile Include="zz TIS\Oint.cs" />
+    <Compile Include="zz TIS\Olong.cs" />
+    <Compile Include="zz TIS\Onum.cs" />
+    <Compile Include="zz TIS\Ots.cs" />
+    <Compile Include="zz TIS\Sys.cs" />
+    <Compile Include="zz TIS\SysexceptuserUserAbort.cs" />
+    <Compile Include="zz TIS\SyspathPath.cs" />
+    <Compile Include="zz TIS\SyspathtypeEnum.cs" />
+    <Compile Include="zz TIS\SyspathwhereEnum.cs" />
+    <Compile Include="zz TIS\T2CharDescriptionTuple.cs" />
+    <Compile Include="zz TIS\Test.cs" />
+    <Compile Include="zz TIS\TestchartypeEnum.cs" />
+    <Compile Include="zz TIS\TestoptionEnum.cs" />
+    <Compile Include="zz TIS\Tools.cs" />
+    <Compile Include="zz TIS\ToolsalignmentEnum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="a Test\ProgramTest.resx">
+      <DependentUpon>ProgramTest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

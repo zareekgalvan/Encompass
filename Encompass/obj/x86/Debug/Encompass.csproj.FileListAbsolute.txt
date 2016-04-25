@@ -1,0 +1,3 @@
+\\Mac\Home\Desktop\Encompass\Encompass\obj\x86\Debug\Encompass.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\Encompass\Encompass\obj\x86\Debug\Encompass.frmPrueba.resources
+\\Mac\Home\Desktop\Encompass\Encompass\obj\x86\Debug\Encompass.csproj.GenerateResource.Cache
