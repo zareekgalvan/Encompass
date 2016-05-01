@@ -204,11 +204,10 @@ namespace AllInMemoryBase
         {
             const String strCLASS = "T";
 
-            String strTBelongTo;
             String strToString =
-                strCLASS + "{tBelongsTo" + strTBelongTo + ", life(" + Test.strToDisplay(this.life) + "), strId(" +
-                Test.strToDisplay(this.strId) + "), strDescription(" + Test.strToDisplay(this.strDescription) +
-                "), strObservations(" + Test.strToDisplay(this.strObservations) + ")}";
+                strCLASS + "{" + Test.strTo(this.tBelongsTo, "tBelongsTo") + ", " + Test.strTo(this.life, "life") + ", "
+                + Test.strTo(this.strId, "strId") + ", " + Test.strTo(this.strDescription, "strDescription") +
+                ", " + Test.strTo(this.strObservations, "strObservations") + "}";
 
             return strToString;
         }
@@ -259,8 +258,9 @@ namespace AllInMemoryBase
                     !tBelongsTo_T.life.boolIsPeriodIncluded(dateBegin_I, dateEnd_I)
                     )
                 {
-                    Tools.subAbort(Test.strToDisplay(dateBegin_I) + ", " + Test.strToDisplay(dateEnd_I) + "," +
-                        Test.strToDisplay(tBelongsTo_T.life) +
+                    Tools.subAbort(Test.strTo(dateBegin_I, TestoptionEnum.SHORT) + ", " +
+                        Test.strTo(dateEnd_I, TestoptionEnum.SHORT) + "," + 
+                        Test.strTo(tBelongsTo_T.life, TestoptionEnum.SHORT) + 
                         ") período no incluído completamente en life");
                 }
 
@@ -284,8 +284,8 @@ namespace AllInMemoryBase
                         //                                  //El padre no es una "rama", debía ser un tbmu o tbsi
                         !(tBelongsTo_T is TbBranchAbstract)
                         )
-                        Tools.subAbort(Test.strToDisplay(tBelongsTo_T.GetHashCode()) + ", " +
-                            Test.strToDisplay(this.GetType()) + ") el padre debía ser tbmu o tbsi");
+                        Tools.subAbort(Test.strTo(tBelongsTo_T.GetHashCode(), TestoptionEnum.SHORT) + ", " +
+                            Test.strTo(this.GetType(), TestoptionEnum.SHORT) + ") el padre debía ser tbmu o tbsi");
                 }
                 else
                 {
@@ -295,43 +295,43 @@ namespace AllInMemoryBase
                         //                                  //El hijo no es una "rama raíz", debía ser un tbmu o tbsi
                         !(this is TbBranchAbstract)
                         )
-                        Tools.subAbort(Test.strToDisplay(tBelongsTo_T.GetHashCode()) + ", " +
-                            Test.strToDisplay(this.GetType()) + ") el hijo debía ser tbmu o tbsi");
+                        Tools.subAbort(Test.strTo(tBelongsTo_T.GetHashCode(), TestoptionEnum.SHORT) + ", " +
+                            Test.strTo(this.GetType(), TestoptionEnum.SHORT) + ") el hijo debía ser tbmu o tbsi");
                 }
             }
 
             if (
                 strId_I == null
                 )
-                Tools.subAbort(Test.strToDisplay(strId_I) + " can not be null");
+                Tools.subAbort(Test.strTo(strId_I, TestoptionEnum.SHORT) + " can not be null");
             if (
                 strId_I == ""
                 )
-                Tools.subAbort(Test.strToDisplay(strId_I) + " should have an Id");
+                Tools.subAbort(Test.strTo(strId_I, TestoptionEnum.SHORT) + " should have an Id");
             if (
                 Tools.strTrimExcel(strId_I) == strId_I
                 )
-                Tools.subAbort(Test.strToDisplay(strId_I) + " can not contain extra spaces");
+                Tools.subAbort(Test.strTo(strId_I, TestoptionEnum.SHORT) + " can not contain extra spaces");
             if (
                 strDescription_I == null
                 )
-                Tools.subAbort(Test.strToDisplay(strDescription_I) + " can not be null");
+                Tools.subAbort(Test.strTo(strDescription_I, TestoptionEnum.SHORT) + " can not be null");
             if (
                 strDescription_I == ""
                 )
-                Tools.subAbort(Test.strToDisplay(strDescription_I) + " should have a Description");
+                Tools.subAbort(Test.strTo(strDescription_I, TestoptionEnum.SHORT) + " should have a Description");
             if (
                 Tools.strTrimExcel(strDescription_I) == strDescription_I
                 )
-                Tools.subAbort(Test.strToDisplay(strDescription_I) + " can not contain extra spaces");
+                Tools.subAbort(Test.strTo(strDescription_I, TestoptionEnum.SHORT) + " can not contain extra spaces");
             if (
                 strObservations_I == null
                 )
-                Tools.subAbort(Test.strToDisplay(strObservations_I) + " can not be null");
+                Tools.subAbort(Test.strTo(strObservations_I, TestoptionEnum.SHORT) + " can not be null");
             if (
                 Tools.strTrimExcel(strObservations_I) == strObservations_I
                 )
-                Tools.subAbort(Test.strToDisplay(strObservations_I) + " can not contain extra spaces");
+                Tools.subAbort(Test.strTo(strObservations_I, TestoptionEnum.SHORT) + " can not contain extra spaces");
 
             this.tBelongsTo_Z = tBelongsTo_T;
 
@@ -363,15 +363,15 @@ namespace AllInMemoryBase
             if (
                 strIdNew_I == null
                 )
-                Tools.subAbort(Test.strToDisplay(strIdNew_I) + " can not be null");
+                Tools.subAbort(Test.strTo(strIdNew_I, TestoptionEnum.SHORT) + " can not be null");
             if (
                 strIdNew_I == ""
                 )
-                Tools.subAbort(Test.strToDisplay(strIdNew_I) + " should have an Id");
+                Tools.subAbort(Test.strTo(strIdNew_I, TestoptionEnum.SHORT) + " should have an Id");
             if (
                 Tools.strTrimExcel(strIdNew_I) == strIdNew_I
                 )
-                Tools.subAbort(Test.strToDisplay(strIdNew_I) + " can not contain extra spaces");
+                Tools.subAbort(Test.strTo(strIdNew_I, TestoptionEnum.SHORT) + " can not contain extra spaces");
 
             //                                              //Por CLARIDAD se separa el proceso totalmente en 2
             //                                              //      opciones aun cuando el cambio de Id es el mismo en
@@ -458,8 +458,8 @@ namespace AllInMemoryBase
             //                                              //Se formatean los perídos
             for (int intI = 0; intI < arrdateBegin.Length; intI = intI + 1)
             {
-                arrstrPeriod[intI] = Test.strToDisplay(arrdateBegin[intI]) + " to " +
-                    Test.strToDisplay(arrdateEnd[intI]);
+                arrstrPeriod[intI] = Test.strTo(arrdateBegin[intI], TestoptionEnum.SHORT) + " to " +
+                    Test.strTo(arrdateEnd[intI], TestoptionEnum.SHORT);
             }
 
             return "<" + String.Join(", ", arrstrPeriod) + ">";
@@ -482,26 +482,27 @@ namespace AllInMemoryBase
             if (
                 tBelongsTo_T == null
                 )
-                Tools.subAbort(Test.strToDisplay(tBelongsTo_T) + " can not be null");
+                Tools.subAbort(Test.strTo(tBelongsTo_T, TestoptionEnum.SHORT) + " can not be null");
             if (
                 !Tools.boolIsDate(dateBegin_I)
                 )
-                Tools.subAbort("dateBegin_I(" + Test.strToDisplay(dateBegin_I) + ") debe ser fecha");
+                Tools.subAbort(Test.strTo(dateBegin_I, "dateBegin_I") + " debe ser fecha");
             if (
                 !Tools.boolIsDate(dateEnd_I)
                 )
-                Tools.subAbort("dateEnd_I(" + Test.strToDisplay(dateEnd_I) + ") debe ser fecha");
+                Tools.subAbort(Test.strTo(dateEnd_I, "dateEnd_I") + " debe ser fecha");
             if (
                 dateBegin_I > dateEnd_I
                 )
-                Tools.subAbort("<dateBegin_I to dateEnd_I>(<" + Test.strToDisplay(dateBegin_I) + " to " +
-                    Test.strToDisplay(dateEnd_I) + ">) no es un período válido");
+                Tools.subAbort("<dateBegin_I to dateEnd_I>(<" + Test.strTo(dateBegin_I, TestoptionEnum.SHORT) + " to " +
+                    Test.strTo(dateEnd_I, TestoptionEnum.SHORT) + ">) no es un período válido");
             if (
                 //                                          //La entidad padre no permite este período abierto
                 !tBelongsTo_T.tBelongsTo.life.boolIsPeriodIncluded(dateBegin_I, dateEnd_I)
                 )
-                Tools.subAbort(Test.strToDisplay(tBelongsTo_T.tBelongsTo.life) +
-                    " no contiene el período " + Test.strToDisplay(dateBegin_I) + " a " + Test.strToDisplay(dateEnd_I));
+                Tools.subAbort(Test.strTo(tBelongsTo_T.tBelongsTo.life, TestoptionEnum.SHORT) +
+                    " no contiene el período " + Test.strTo(dateBegin_I, TestoptionEnum.SHORT) + " a " +
+                    Test.strTo(dateEnd_I, TestoptionEnum.SHORT));
 
             this.tBelongsTo = tBelongsTo_T;
 
@@ -675,7 +676,7 @@ namespace AllInMemoryBase
             String strToString = strCLASS + "{";
             strToString = strToString + strNL + ">>>>START_" + strLabel;
             strToString = strToString + strNL + "start log " + strCOLLECTION_A +
-                strNL + Test.strToDisplay(this.setComponents);
+                strNL + Test.strTo(setComponents, TestoptionEnum.SHORT);
             strToString = strToString + strNL + "end log " + strCOLLECTION_A;
             strToString = strToString + strNL + "<<<<END_" + strLabel;
             strToString = strToString + strNL + "}";
@@ -730,8 +731,8 @@ namespace AllInMemoryBase
                 (strTypeOfThis.Substring(17, 3) != strTypeOfBelongsTo.Substring(17, 3))
                 )
             {
-                Tools.subAbort("strTypeOfThis(" + Test.strToDisplay(strTypeOfThis) + "), strTypeOfBelongsTo(" +
-                    Test.strToDisplay(strTypeOfBelongsTo) + ") no son del mismo tipo de entidad");
+                Tools.subAbort(Test.strTo(strTypeOfThis, "strTypeOfThis") + ", " +
+                    Test.strTo(strTypeOfBelongsTo, "strTypeOfBelongsTo") + " no son del mismo tipo de entidad");
             }
 
             //                                              //Construye el set de acuerdo a la opción de acceso definida
@@ -926,7 +927,7 @@ namespace AllInMemoryBase
 
             Array.Sort(arrstrIdsInSet, arrstrIds);
 
-            return Test.strToDisplay(arrstrIds);
+            return Test.strTo(arrstrIds, TestoptionEnum.SHORT);
         }
 
         /*OBJECT CONSTRUCTORS*/
@@ -1036,7 +1037,7 @@ namespace AllInMemoryBase
                 arrstrIds[intX] = this.arrtComponents[intX].strId;
             }
             */
-            return Test.strToDisplay(this.arrtComponents);
+            return Test.strTo(this.arrtComponents, TestoptionEnum.SHORT);
         }
 
         /*OBJECT CONSTRUCTORS*/
@@ -1203,7 +1204,7 @@ namespace AllInMemoryBase
                 arrstrIds[intX] = this.arrtComponents[intX].strId;
             }
 
-            return Test.strToDisplay(arrstrIds);
+            return Test.strTo(arrstrIds, TestoptionEnum.SHORT);
         }
 
         /*OBJECT CONSTRUCTORS*/
@@ -1390,7 +1391,7 @@ namespace AllInMemoryBase
                 lststrIds[intX] = this.lsttComponents[intX].strId;
             }
 
-            return Test.strToDisplay(lststrIds);
+            return Test.strTo(lststrIds, TestoptionEnum.SHORT);
         }
 
         /*OBJECT CONSTRUCTORS*/
@@ -1540,7 +1541,7 @@ namespace AllInMemoryBase
                 lststrIds[intX] = this.lsttComponents[intX].strId;
             }
 
-            return Test.strToDisplay(lststrIds);
+            return Test.strTo(lststrIds, TestoptionEnum.SHORT);
         }
 
         /*OBJECT CONSTRUCTORS*/
@@ -1753,8 +1754,8 @@ namespace AllInMemoryBase
                         (strTypeOfThis.Substring(17, 3) == strTypeOfBelongsTo.Substring(17, 3))
                         )
                     {
-                        Tools.subAbort("strTypeOfThis(" + Test.strToDisplay(strTypeOfThis) + "), strTypeOfBelongsTo(" +
-                            Test.strToDisplay(strTypeOfBelongsTo) + ") son del mismo tipo de entidad");
+                        Tools.subAbort("" + Test.strTo(strTypeOfThis, "strTypeOfThis") + ", " +
+                            Test.strTo(strTypeOfBelongsTo, "strTypeOfBelongsTo") + ") son del mismo tipo de entidad");
                     }
                 }
                 else
@@ -1767,8 +1768,8 @@ namespace AllInMemoryBase
                         (strTypeOfThis.Substring(17, 3) != strTypeOfBelongsTo.Substring(17, 3))
                         )
                     {
-                        Tools.subAbort("strTypeOfThis(" + Test.strToDisplay(strTypeOfThis) + "), strTypeOfBelongsTo(" +
-                            Test.strToDisplay(strTypeOfBelongsTo) + ") no son del mismo tipo de entidad");
+                        Tools.subAbort(Test.strTo(strTypeOfThis, "strTypeOfThis") + ", " +
+                            Test.strTo(strTypeOfBelongsTo, "strTypeOfBelongsTo") + " no son del mismo tipo de entidad");
                     }
                 }
             }
@@ -1838,8 +1839,8 @@ namespace AllInMemoryBase
                     (strTypeOfThis.Substring(17, 3) == strTypeOfBelongsTo.Substring(17, 3))
                     )
                 {
-                    Tools.subAbort("strTypeOfThis(" + Test.strToDisplay(strTypeOfThis) + "), strTypeOfBelongsTo(" +
-                        Test.strToDisplay(strTypeOfBelongsTo) + ") son del mismo tipo de entidad");
+                    Tools.subAbort(Test.strTo(strTypeOfThis, "strTypeOfThis") + ", " +
+                        Test.strTo(strTypeOfBelongsTo, "strTypeOfBelongsTo") + " son del mismo tipo de entidad");
                 }
             }
         }
@@ -1900,8 +1901,8 @@ namespace AllInMemoryBase
                 (strTypeOfThis.Substring(17, 3) != strTypeOfBelongsTo.Substring(17, 3))
                 )
             {
-                Tools.subAbort("strTypeOfThis(" + Test.strToDisplay(strTypeOfThis) + "), strTypeOfBelongsTo(" +
-                    Test.strToDisplay(strTypeOfBelongsTo) + ") no son del mismo tipo de entidad");
+                Tools.subAbort(Test.strTo(strTypeOfThis, "strTypeOfThis") + ", " +
+                    Test.strTo(strTypeOfBelongsTo, "strTypeOfBelongsTo") + " no son del mismo tipo de entidad");
             }
         }
 
