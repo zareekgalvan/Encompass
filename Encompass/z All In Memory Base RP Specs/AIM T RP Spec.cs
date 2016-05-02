@@ -277,7 +277,6 @@ namespace AllInMemoryBase
                 else
                 {
                     //                                      //Son de diferente tipo de contenido
-
                     if (
                         //                                  //El hijo no es una "rama raíz", debía ser un tbmu o tbsi
                         !(this is TbBranchAbstract)
@@ -882,7 +881,7 @@ namespace AllInMemoryBase
         private readonly /*MUTABLE*/ Dictionary<String, TTreeStructureAbstract> dictComponentes;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        public String strTo(TestoptionEnum testoptionSHORT_I)
         {
             String[] arrstrIds = new String[this.dictComponentes.Count];
             String[] arrstrIdsInSet = new String[arrstrIds.Length];
@@ -902,7 +901,7 @@ namespace AllInMemoryBase
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        public override String strTo()
+        public String strTo()
         {
             String[] arrstrIds = new String[this.dictComponentes.Count];
             String[] arrstrIdsInSet = new String[arrstrIds.Length];
@@ -1014,13 +1013,13 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ TTreeStructureAbstract[] arrtComponents;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        public String strTo(TestoptionEnum testoptionSHORT_I)
         {
             return Test.strTo(this.arrtComponents, TestoptionEnum.SHORT);
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        public override String strTo()
+        public String strTo()
         {
             return Test.strTo(this.arrtComponents, "arrtComponents");
         }
@@ -1176,7 +1175,7 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ TTreeStructureAbstract[] arrtComponents;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        public String strTo(TestoptionEnum testoptionSHORT_I)
         {
             String[] arrstrIds = new String[this.arrtComponents.Length];
 
@@ -1189,7 +1188,7 @@ namespace AllInMemoryBase
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        public override String strTo()
+        public String strTo()
         {
             String[] arrstrIds = new String[this.arrtComponents.Length];
 
@@ -1372,7 +1371,7 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ List<TTreeStructureAbstract> lsttComponents = new List<TTreeStructureAbstract>();
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        public String strTo(TestoptionEnum testoptionSHORT_I)
         {
             List<String> lststrIds = new List<String>();
 
@@ -1385,7 +1384,7 @@ namespace AllInMemoryBase
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        public override String strTo()
+        public String strTo()
         {
             List<String> lststrIds = new List<String>();
 
@@ -1531,7 +1530,7 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ List<TTreeStructureAbstract> lsttComponents = new List<TTreeStructureAbstract>();
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        public String strTo(TestoptionEnum testoptionSHORT_I)
         {
             List<String> lststrIds = new List<String>();
 
@@ -1544,7 +1543,7 @@ namespace AllInMemoryBase
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        public override String strTo()
+        public String strTo()
         {
             List<String> lststrIds = new List<String>();
 
