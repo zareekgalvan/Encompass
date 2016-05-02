@@ -200,19 +200,6 @@ namespace AllInMemoryBase
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
-        {
-            const String strCLASS = "T";
-
-            String strToString =
-                strCLASS + "{" + Test.strTo(this.tBelongsTo, "tBelongsTo") + ", " + Test.strTo(this.life, "life") + ", "
-                + Test.strTo(this.strId, "strId") + ", " + Test.strTo(this.strDescription, "strDescription") +
-                ", " + Test.strTo(this.strObservations, "strObservations") + "}";
-
-            return strToString;
-        }
-
-        //--------------------------------------------------------------------------------------------------------------
 
         /*CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -448,21 +435,24 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ DateTime[] arrdateEnd;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //<2014-01-01 to 2014-06-30, ...,  2015-06-22 to 9999-12-31>
+            String strObjId = Test.strGetObjId(this);
 
-            String[] arrstrPeriod = new String[this.arrdateBegin.Length];
+            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.tBelongsTo, TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.arrdateBegin, TestoptionEnum.SHORT) + 
+                Test.strTo(this.arrdateEnd, TestoptionEnum.SHORT) + "]";
+        }
 
-            //                                              //Se formatean los perídos
-            for (int intI = 0; intI < arrdateBegin.Length; intI = intI + 1)
-            {
-                arrstrPeriod[intI] = Test.strTo(arrdateBegin[intI], TestoptionEnum.SHORT) + " to " +
-                    Test.strTo(arrdateEnd[intI], TestoptionEnum.SHORT);
-            }
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
 
-            return "<" + String.Join(", ", arrstrPeriod) + ">";
+            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.tBelongsTo, "tBelongsTo") + ", " + Test.strTo(this.arrdateBegin, "arrdateBegin") +
+                Test.strTo(this.arrdateEnd, "arrdateEnd") + "]";
         }
 
         /*OBJECT CONSTRUCTORS*/
@@ -831,13 +821,6 @@ namespace AllInMemoryBase
         //--------------------------------------------------------------------------------------------------------------
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
-        {
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //{ id0, id1, ..., idN } sin embargo esto lo debe hacer cada
-            //                                              //      una de las estrategias específicas.
-            return "";
-        }
 
         /*OBJECT CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -899,13 +882,8 @@ namespace AllInMemoryBase
         private readonly /*MUTABLE*/ Dictionary<String, TTreeStructureAbstract> dictComponentes;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //{ id0, id1, ..., idN } sin embargo esto lo debe hacer cada
-            //                                              //      una de las estrategias específicas.
-
-            //                                              //Se pasan las dos Ids a dos arreglos ordenados de llaves.
             String[] arrstrIds = new String[this.dictComponentes.Count];
             String[] arrstrIdsInSet = new String[arrstrIds.Length];
 
@@ -922,6 +900,28 @@ namespace AllInMemoryBase
 
             return Test.strTo(arrstrIds, TestoptionEnum.SHORT);
         }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String[] arrstrIds = new String[this.dictComponentes.Count];
+            String[] arrstrIdsInSet = new String[arrstrIds.Length];
+
+            int intX = 0;
+            foreach (KeyValuePair<String, TTreeStructureAbstract> strt in this.dictComponentes)
+            {
+                arrstrIds[intX] = strt.Value.strId;
+                arrstrIdsInSet[intX] = strt.Key;
+
+                intX = intX + 1;
+            }
+
+            Array.Sort(arrstrIdsInSet, arrstrIds);
+
+            return Test.strTo(arrstrIds, "arrstrIds");
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         /*OBJECT CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -1014,24 +1014,18 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ TTreeStructureAbstract[] arrtComponents;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            /*
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //{ id0, id1, ..., idN } sin embargo esto lo debe hacer cada
-            //                                              //      una de las estrategias específicas.
-
-            //                                              //Se crea un arreglo de Ids.
-            String[] arrstrIds = new String[this.arrtComponents.Length];
-
-            //                                              //Guarda los strId's de los objetos en el arreglo.
-            for (int intX = 0; intX < this.arrtComponents.Length; intX = intX + 1)
-            {
-                arrstrIds[intX] = this.arrtComponents[intX].strId;
-            }
-            */
             return Test.strTo(this.arrtComponents, TestoptionEnum.SHORT);
         }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            return Test.strTo(this.arrtComponents, "arrtComponents");
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         /*OBJECT CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -1182,16 +1176,10 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ TTreeStructureAbstract[] arrtComponents;
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //{ id0, id1, ..., idN } sin embargo esto lo debe hacer cada
-            //                                              //      una de las estrategias específicas.
-
-            //                                              //Se crea un arreglo de Ids.
             String[] arrstrIds = new String[this.arrtComponents.Length];
 
-            //                                              //Guarda los strId's de los objetos en el arreglo.
             for (int intX = 0; intX < this.arrtComponents.Length; intX = intX + 1)
             {
                 arrstrIds[intX] = this.arrtComponents[intX].strId;
@@ -1199,6 +1187,21 @@ namespace AllInMemoryBase
 
             return Test.strTo(arrstrIds, TestoptionEnum.SHORT);
         }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String[] arrstrIds = new String[this.arrtComponents.Length];
+
+            for (int intX = 0; intX < this.arrtComponents.Length; intX = intX + 1)
+            {
+                arrstrIds[intX] = this.arrtComponents[intX].strId;
+            }
+
+            return Test.strTo(arrstrIds, "arrstrIds");
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         /*OBJECT CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -1369,16 +1372,10 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ List<TTreeStructureAbstract> lsttComponents = new List<TTreeStructureAbstract>();
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //{ id0, id1, ..., idN } sin embargo esto lo debe hacer cada
-            //                                              //      una de las estrategias específicas.
-
-            //                                              //Se crea una lista de Ids.
             List<String> lststrIds = new List<String>();
 
-            //                                              //Guarda los strId's de los objetos en la lista.
             for (int intX = 0; intX < this.lsttComponents.Count; intX = intX + 1)
             {
                 lststrIds[intX] = this.lsttComponents[intX].strId;
@@ -1386,6 +1383,21 @@ namespace AllInMemoryBase
 
             return Test.strTo(lststrIds, TestoptionEnum.SHORT);
         }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            List<String> lststrIds = new List<String>();
+
+            for (int intX = 0; intX < this.lsttComponents.Count; intX = intX + 1)
+            {
+                lststrIds[intX] = this.lsttComponents[intX].strId;
+            }
+
+            return Test.strTo(lststrIds, "lststrIds");
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         /*OBJECT CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -1519,16 +1531,10 @@ namespace AllInMemoryBase
         private /*MUTABLE*/ List<TTreeStructureAbstract> lsttComponents = new List<TTreeStructureAbstract>();
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            //                                              //Se formatea un sólo dato complejo.
-            //                                              //{ id0, id1, ..., idN } sin embargo esto lo debe hacer cada
-            //                                              //      una de las estrategias específicas.
-
-            //                                              //Se crea una lista de Ids.
             List<String> lststrIds = new List<String>();
 
-            //                                              //Guarda los strId's de los objetos en la lista.
             for (int intX = 0; intX < this.lsttComponents.Count; intX = intX + 1)
             {
                 lststrIds[intX] = this.lsttComponents[intX].strId;
@@ -1536,6 +1542,21 @@ namespace AllInMemoryBase
 
             return Test.strTo(lststrIds, TestoptionEnum.SHORT);
         }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            List<String> lststrIds = new List<String>();
+
+            for (int intX = 0; intX < this.lsttComponents.Count; intX = intX + 1)
+            {
+                lststrIds[intX] = this.lsttComponents[intX].strId;
+            }
+
+            return Test.strTo(lststrIds, "lststrIds");
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         /*OBJECT CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -1694,6 +1715,25 @@ namespace AllInMemoryBase
         {
             base.subReset();
         }
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        {
+            const String strCLASS = "Tbmu";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
+        }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            const String strCLASS = "Tbmu";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
+        }
 
         //--------------------------------------------------------------------------------------------------------------
         public override String ToString()
@@ -1702,7 +1742,7 @@ namespace AllInMemoryBase
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -1786,6 +1826,15 @@ namespace AllInMemoryBase
             base.subReset();
         }
 
+        public override String strTo()
+        {
+            const String strCLASS = "Tbsi";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
+        }
+
         //--------------------------------------------------------------------------------------------------------------
         public override String ToString()
         {
@@ -1793,7 +1842,7 @@ namespace AllInMemoryBase
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -1855,6 +1904,15 @@ namespace AllInMemoryBase
             base.subReset();
         }
 
+        public override String strTo()
+        {
+            const String strCLASS = "Tlve";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
+        }
+
         //--------------------------------------------------------------------------------------------------------------
         public override String ToString()
         {
@@ -1862,7 +1920,7 @@ namespace AllInMemoryBase
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
