@@ -1721,21 +1721,11 @@ namespace AllInMemoryBase
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.strTo();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
         public override String strTo()
-        {
-            const String strCLASS = "Tbmu";
-
-            String strToString = strCLASS + "{}";
-
-            return strToString + "==>" + base.strTo();
-        }
-
-        //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
         {
             const String strCLASS = "Tbmu";
 
@@ -1825,17 +1815,18 @@ namespace AllInMemoryBase
             base.subReset();
         }
 
-        public override String strTo()
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tbsi";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.strTo();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo()
         {
             const String strCLASS = "Tbsi";
 
@@ -1903,17 +1894,18 @@ namespace AllInMemoryBase
             base.subReset();
         }
 
-        public override String strTo()
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tlve";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.strTo();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo()
         {
             const String strCLASS = "Tlve";
 
