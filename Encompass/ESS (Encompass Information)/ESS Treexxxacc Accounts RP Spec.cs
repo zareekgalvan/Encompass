@@ -88,7 +88,7 @@ namespace Encompass
             if (
                 tBelongTo_T == null
                 )
-                Tools.subAbort("tBelongTo_T(" + Test.strToDisplay(tBelongTo_T) + ") no puede ser null");
+                Tools.subAbort(Test.strTo(tBelongTo_T, TestoptionEnum.SHORT) + ") no puede ser null");
 
         }
 

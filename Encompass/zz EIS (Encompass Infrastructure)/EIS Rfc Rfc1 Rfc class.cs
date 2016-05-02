@@ -18,7 +18,8 @@ using AllInMemoryBase;
 namespace EncompassInfrastructure
 {
     //==================================================================================================================
-    public abstract class RfcRFCAbstract                    //Base para las clases concretas de Persona Moral y Física.
+    public abstract class RfcRFCAbstract:BclassBaseClassAbstract
+    //                                                      //Base para las clases concretas de Persona Moral y Física.
     {
         /*CONSTANTS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -91,8 +92,9 @@ namespace EncompassInfrastructure
                     //                                      //Esta duplicado.
                     arrcharUSEFUL_O[intI] == arrcharUSEFUL_O[intI - 1]
                     )
-                    Tools.subAbort("arrcharUSEFUL_O(" + Test.strToDisplay(arrcharUSEFUL_O) + "), intI(" +
-                        intI + ") tiene caracteres duplicados");
+                    Tools.subAbort(Test.strTo(arrcharUSEFUL_O, TestoptionEnum.SHORT) + "," + 
+                        Test.strTo(intI, TestoptionEnum.SHORT) + 
+                        ") tiene carácteres duplicados");
             }
         }
         //--------------------------------------------------------------------------------------------------------------
@@ -108,14 +110,36 @@ namespace EncompassInfrastructure
         }
 
         //--------------------------------------------------------------------------------------------------------------
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.strRfc, TestoptionEnum.SHORT) + "]";
+        }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "{" + Test.strTo(this.strRfc, TestoptionEnum.SHORT) + ", " +
+                 "}" + "==>" + base.strTo();
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public override String ToString()
         {
             const String strCLASS = "Rfc";
 
-            return strCLASS + "{strRfc(" + Test.strToDisplay(strRfc) + ")}";
+            String strToString =
+                strCLASS + "{" + Test.strTo(this.strRfc, "strRfc") + "}";
+
+            return strToString;
         }
 
         //--------------------------------------------------------------------------------------------------------------
+
 
         /*CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -249,6 +273,10 @@ namespace EncompassInfrastructure
     {
         /*CONSTANTS*/
         //--------------------------------------------------------------------------------------------------------------
+        private const BclassmutabilityEnum bclassmutability_Z = BclassmutabilityEnum.MUTABLE;
+        public override BclassmutabilityEnum bclassmutability { get { return RfcpmPersonaMoral.bclassmutability_Z; } }
+
+
 
         //                                                  //El siguiente String son caracteres útiles en el inicio de
         //                                                  //      un RFC de persona moral.
@@ -299,7 +327,7 @@ namespace EncompassInfrastructure
             if (
                 !RfcpmPersonaMoral.boolIsValid(this.strRfc)
                 )
-                Tools.subAbort("this.strRfc(" + Test.strToDisplay(this.strRfc) + ") es inválido");
+                Tools.subAbort(Test.strTo(strRfc, TestoptionEnum.SHORT) + ") es inválido");
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -344,6 +372,9 @@ namespace EncompassInfrastructure
     {
         /*CONSTANTS*/
         //--------------------------------------------------------------------------------------------------------------
+        private const BclassmutabilityEnum bclassmutability_Z = BclassmutabilityEnum.MUTABLE;
+        public override BclassmutabilityEnum bclassmutability { get { return RfcpfPersonaFisica.bclassmutability_Z; } }
+
 
         //                                                  //El siguiente String son caracteres útiles en el inicio de
         //                                                  //      un RFC de persona física.
@@ -394,7 +425,7 @@ namespace EncompassInfrastructure
             if (
                 !RfcpfPersonaFisica.boolIsValid(this.strRfc)
                 )
-                Tools.subAbort("this.strRfc(" + Test.strToDisplay(this.strRfc) + ") es inválido");
+                Tools.subAbort(Test.strTo(strRfc, TestoptionEnum.SHORT) + ") es inválido");
         }
 
         //--------------------------------------------------------------------------------------------------------------

@@ -32,9 +32,9 @@ namespace AllInMemoryBase
             if (
                 !this.boolIsPeriodNotIncluded(dateBegin_I, dateEnd_I)
                 )
-                Tools.subAbort("<dateBegin_I to dateEnd_I>(<" + Test.strToDisplay(dateBegin_I) + " to " +
-                    Test.strToDisplay(dateEnd_I) + ">) no esta totalmente excluído en this(" +
-                    Test.strToDisplay(this) + ")");
+                Tools.subAbort(Test.strTo(dateBegin_I, TestoptionEnum.SHORT) + "to" +
+                    Test.strTo(dateEnd_I, TestoptionEnum.SHORT) +
+                    ") no esta totalmente excluído en this(" + Test.strTo(this, TestoptionEnum.SHORT) + ")");
 
             int intDatePos = 0;
             /*DO-UNTIL*/

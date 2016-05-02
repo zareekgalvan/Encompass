@@ -4,3 +4,6 @@
 \\Mac\Dropbox\TOWA\CODIGO\Encompass\obj\x86\Debug\Encompass.csprojResolveAssemblyReference.cache
 \\Mac\Dropbox\TOWA\CODIGO\Encompass\obj\x86\Debug\Encompass.frmPrueba.resources
 \\Mac\Dropbox\TOWA\CODIGO\Encompass\obj\x86\Debug\Encompass.csproj.GenerateResource.Cache
+C:\Users\AngelGonzalez\Downloads\Encompass-master\Encompass-master\Encompass\obj\x86\Debug\Encompass.csprojResolveAssemblyReference.cache
+C:\Users\AngelGonzalez\Downloads\Encompass-master\Encompass-master\Encompass\obj\x86\Debug\Encompass.frmPrueba.resources
+C:\Users\AngelGonzalez\Downloads\Encompass-master\Encompass-master\Encompass\obj\x86\Debug\Encompass.csproj.GenerateResource.Cache

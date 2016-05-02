@@ -16,9 +16,17 @@ using TowaInfrastructure;
 namespace EncompassInfrastructure
 {
     //==================================================================================================================
-    public /*INMUTABLE*/ class ImssNumeroAfiliacionImss     //Guarda en forma robusta el Numero de Aliliación al IMSS de
+    public /*INMUTABLE*/ class ImssNumeroAfiliacionImss:BclassBaseClassAbstract
+        //                                                  //Guarda en forma robusta el Numero de Aliliación al IMSS de
         //                                                  //      una persona (obrero o empleado).
     {
+        /*CONSTANTS*/
+        //--------------------------------------------------------------------------------------------------------------
+        private const BclassmutabilityEnum bclassmutability_Z = BclassmutabilityEnum.MUTABLE;
+        public override BclassmutabilityEnum bclassmutability 
+                                             { get { return ImssNumeroAfiliacionImss.bclassmutability_Z; } }
+        //--------------------------------------------------------------------------------------------------------------
+
         /*INSTANCE VARIABLES*/
         //--------------------------------------------------------------------------------------------------------------
 
@@ -33,13 +41,36 @@ namespace EncompassInfrastructure
         {
         }
 
-        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.strNumeroAfiliacionImss, TestoptionEnum.SHORT) + "]";
+        }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "{" + Test.strTo(this.strNumeroAfiliacionImss, TestoptionEnum.SHORT) + ", " +
+                 "}" + "==>" + base.strTo();
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public override String ToString()
         {
             const String strCLASS = "Imss";
 
-            return strCLASS + "{strNumeroAfiliacionImss(" + Test.strToDisplay(this.strNumeroAfiliacionImss) + ")}";
+            String strToString =
+                strCLASS + "{" + Test.strTo(this.strNumeroAfiliacionImss, "strNumeroAfiliacionImss") + "}";
+
+            return strToString;
         }
+
+        //--------------------------------------------------------------------------------------------------------------
 
         /*CONSTRUCTORS*/
         //--------------------------------------------------------------------------------------------------------------
@@ -52,7 +83,7 @@ namespace EncompassInfrastructure
             if (
                 !ImssNumeroAfiliacionImss.boolIsValid(this.strNumeroAfiliacionImss)
                 )
-                Tools.subAbort("this.strNumeroAfiliacionImss(" + Test.strToDisplay(this.strNumeroAfiliacionImss) +
+                Tools.subAbort(Test.strTo(strNumeroAfiliacionImss, TestoptionEnum.SHORT) +
                     ") es invalido");
 
             this.strNumeroAfiliacionImss_Z = strNumeroAfiliacionImss_I;

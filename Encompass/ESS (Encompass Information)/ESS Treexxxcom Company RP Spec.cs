@@ -78,7 +78,7 @@ namespace Encompass
             if (
                 tlveorgBelongTo_T == null
                 )
-                Tools.subAbort("tlveorgBelongTo_T(" + Test.strToDisplay(tlveorgBelongTo_T) + 
+                Tools.subAbort(Test.strTo(tlveorgBelongTo_T, TestoptionEnum.SHORT) + 
                     ") no puede ser null");
         }
 

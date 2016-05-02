@@ -86,13 +86,13 @@ namespace Encompass
             if (
                 tBelongTo_T == null
                 )
-                Tools.subAbort("tBelongTo_T(" + Test.strToDisplay(tBelongTo_T) + ") no puede ser null");
+                Tools.subAbort(Test.strTo(tBelongTo_T, TestoptionEnum.SHORT) + ") no puede ser null");
 
             if (
                 //                                          //Si es raiz debe pertenecer a una organización
                 (tBelongTo_T is TlveLeaveAbstract) && !(tBelongTo_T is TlveorgOrganization)
                 )
-                Tools.subAbort("tBelongTo_T.GetType()(" + Test.strToDisplay(tBelongTo_T.GetType()) + 
+                Tools.subAbort(Test.strTo(tBelongTo_T, TestoptionEnum.SHORT) + 
                     "), debe ser un TlveorgOrganization");
         }
 

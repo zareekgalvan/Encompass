@@ -16,8 +16,14 @@ using TowaInfrastructure;
 namespace EncompassInfrastructure
 {
     //==================================================================================================================
-    public /*INMUTABLE*/ class RpssRegistroPatronalImss     //Guardar en forma robusta el Registro Patronal del IMSS.
+    public /*INMUTABLE*/ class RpssRegistroPatronalImss:BclassBaseClassAbstract     //Guardar en forma robusta el Registro Patronal del IMSS.
     {
+        /*CONSTANTS*/
+        //--------------------------------------------------------------------------------------------------------------
+        private const BclassmutabilityEnum bclassmutability_Z = BclassmutabilityEnum.MUTABLE;
+        public override BclassmutabilityEnum bclassmutability { get { return RpssRegistroPatronalImss.bclassmutability_Z; } }
+        //--------------------------------------------------------------------------------------------------------------
+
         /*INSTANCE VARIABLES*/
         //--------------------------------------------------------------------------------------------------------------
 
@@ -33,13 +39,37 @@ namespace EncompassInfrastructure
         {
         }
 
-        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.strRegistroPatronalImss, TestoptionEnum.SHORT) +  "]";
+        }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "{" + Test.strTo(this.strRegistroPatronalImss, TestoptionEnum.SHORT) + ", " +
+                 "}" + "==>" + base.strTo();
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public override String ToString()
         {
-            const String strCLASS = "Rpss";
+            const String strCLASS = "T";
 
-            return strCLASS + "{strRegistroPatronalImss(" + Test.strToDisplay(this.strRegistroPatronalImss) + ")}";
+            String strToString =
+                strCLASS + "{" + Test.strTo(this.strRegistroPatronalImss, "tBelongsTo") + "}";
+
+            return strToString;
         }
+
+        //--------------------------------------------------------------------------------------------------------------
+
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -55,8 +85,9 @@ namespace EncompassInfrastructure
             if (
                 !RpssRegistroPatronalImss.boolIsValid(this.strRegistroPatronalImss)
                 )
-                Tools.subAbort("this.strRegistroPatronalImss(" + Test.strToDisplay(this.strRegistroPatronalImss) + 
-                    ") es invalido");
+                Tools.subAbort(Test.strTo(strRegistroPatronalImss, TestoptionEnum.SHORT) + 
+                        ") es inválido");
+
 
             this.strRegistroPatronalImss_Z = strRegistroPatronalImss_I;
         }

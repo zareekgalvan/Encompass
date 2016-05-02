@@ -31,16 +31,16 @@ namespace AllInMemoryBase
             if (
                 !Tools.boolIsDate(dateBegin_I)
                 )
-                Tools.subAbort("dateBegin_I(" + Test.strToDisplay(dateBegin_I) + ") debe ser fecha");
+                Tools.subAbort(Test.strTo(dateBegin_I, TestoptionEnum.SHORT) + ") debe ser fecha");
             if (
                 !Tools.boolIsDate(dateEnd_I)
                 )
-                Tools.subAbort("dateEnd_I(" + Test.strToDisplay(dateEnd_I) + ") debe ser fecha");
+                Tools.subAbort(Test.strTo(dateEnd_I, TestoptionEnum.SHORT) + ") debe ser fecha");
             if (
                 dateBegin_I > dateEnd_I
                 )
-                Tools.subAbort("<dateBegin_I to dateEnd_I>(<" + Test.strToDisplay(dateBegin_I) + " to " +
-                    Test.strToDisplay(dateEnd_I) + ">) no es un período válido");
+                Tools.subAbort(Test.strTo(dateBegin_I, TestoptionEnum.SHORT) + "to" +
+                    Test.strTo(dateEnd_I, TestoptionEnum.SHORT) + ") no es un período válido");
 
             //                                              //Busco el último período que inicie antes (o en la fecha)
             //                                              //      de inicio del período a verificar.
