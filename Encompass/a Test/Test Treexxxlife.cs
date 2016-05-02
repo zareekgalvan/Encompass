@@ -48,13 +48,13 @@ namespace Encompass
             //                                              // Fecha que si está incluida y una que no está incluida.
             DateTime dateIncluded = new DateTime(2003, 02, 01);
             bool boolDateIncluded = life.boolIsDateIncluded(dateIncluded);
-            sysswLog.WriteLine("dateIncluded (" + Test.strToDisplay(dateIncluded) + ") is included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolDateIncluded));
+            sysswLog.WriteLine(Test.strTo(dateIncluded, "DateIncluded") + " is included in " +
+            Test.strTo(life, "life") + ": " + Test.strTo(boolDateIncluded, "boolDateIncluded"));
 
             DateTime dateNotIncluded = new DateTime(2001, 02, 01);
             boolDateIncluded = life.boolIsDateIncluded(dateNotIncluded);
-            sysswLog.WriteLine("dateNotIncluded (" + Test.strToDisplay(dateNotIncluded) + ") is included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolDateIncluded));
+            sysswLog.WriteLine(Test.strTo(dateNotIncluded, "dateNotIncluded") + "is included in " +
+            Test.strTo(life, "life") + ": " + Test.strTo(boolDateIncluded, "boolDateIncluded"));
             sysswLog.WriteLine("-------------------------------------------------------------------------------------");
 
             //                                              //Prueba de boolIsPeriodIncluded(). Se prueba con un periodo
@@ -67,44 +67,44 @@ namespace Encompass
 
             //                                              //Prueba para el periodo incluído. (2002,02,01)-(2003,02,01)
             bool boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period(" + Test.strTo(dateBeginIncluded, "dateBegin") + "-" + 
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
 
             //                                              //Prueba para el periodo con inicio no incluído y final si
             //                                              //      incluído. (2001,02,01)-(2003,02,01)
             boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginNotIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
 
             //                                              //Prueba Para Periodo excluido. (2001,02,01)-(2002,01,31)
             boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginNotIncluded, dateEndNotIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndNotIncluded) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncluded, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
             sysswLog.WriteLine("-------------------------------------------------------------------------------------");
 
             //                                              //Prueba de boolIsPeriodNotIncluded(). Se prueba con un
             //                                              //      Periodo incluído, utilizando que empieza afuera y
             //                                              //      termina dentro y uno excluido.
             bool boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is not included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is not included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
 
             //                                              //Prueba para el periodo con inicio no incluído y final si
             //                                              //      incluído. (2001,02,01)-(2003,02,01)
             boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginNotIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is not included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is not included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
 
             //                                              //Prueba Para Periodo excluido. (2001,02,01)-(2002,01,31)
             boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginNotIncluded, dateEndNotIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndNotIncluded) + ") is not included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncluded, "dateEnd") + ") is not included " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
             sysswLog.WriteLine("-------------------------------------------------------------------------------------");
 
             //                                          //Resumen de objetos en todas las pruebas
@@ -145,18 +145,18 @@ namespace Encompass
             //                                              // Fecha que si está incluida y 2 que no están incluidas.
             DateTime dateIncluded = new DateTime(2003, 02, 01);
             bool boolDateIncluded = life.boolIsDateIncluded(dateIncluded);
-            sysswLog.WriteLine("dateIncluded (" + Test.strToDisplay(dateIncluded) + ") is included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolDateIncluded));
+            sysswLog.WriteLine(Test.strTo(dateIncluded, "dateIncluded") + " is included in " +
+            Test.strTo(life, "life") + ": " + Test.strTo(boolDateIncluded, "boolDateIncluded"));
 
             DateTime dateNotIncluded = new DateTime(2001, 02, 01);
             boolDateIncluded = life.boolIsDateIncluded(dateIncluded);
-            sysswLog.WriteLine("dateNotIncluded (" + Test.strToDisplay(dateNotIncluded) + ") is included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolDateIncluded));
+            sysswLog.WriteLine(Test.strTo(dateNotIncluded, "dateNotIncluded") + " is included in " +
+            Test.strTo(life, "life") + "): " + Test.strTo(boolDateIncluded, "boolDateIncluded"));
 
             dateNotIncluded = new DateTime(2015, 10, 01);
             boolDateIncluded = life.boolIsDateIncluded(dateIncluded);
-            sysswLog.WriteLine("dateNotIncluded (" + Test.strToDisplay(dateNotIncluded) + ") is included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolDateIncluded));
+            sysswLog.WriteLine(Test.strTo(dateNotIncluded, "dateNotIncluded") + " is included in " +
+            Test.strTo(life, "life") + ": " + Test.strTo(boolDateIncluded, "boolDateIncluded"));
             sysswLog.WriteLine("-------------------------------------------------------------------------------------");
 
             //                                              //Prueba de boolIsPeriodIncluded(). Se prueba con un periodo
@@ -173,36 +173,36 @@ namespace Encompass
             //                                              //Prueba Para Periodo excluido previo
             //                                              //      Ejemplo: (2001,02,01)-(2002,01,31)
             bool boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginNotIncluded, dateEndNotIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndNotIncluded) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncluded, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
 
             //                                              //Prueba para el periodo con inicio no incluído y final si
             //                                              //      incluído. (2001,02,01)-(2003,02,01)
             boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginNotIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
 
             //                                              //Prueba para el periodo incluído. (2002,02,01)-(2003,02,01)
             boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
 
             //                                              //Prueba para el periodo con inicio incluído y final no
             //                                              //      incluído. (2001,02,01)-(2003,02,01)
             boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginIncluded, dateEndNotIncludedAfter);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndNotIncludedAfter) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncludedAfter, "dateEnd") + ") is included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
 
             //                                              //Prueba Para Periodo excluido posterior
             //                                              //      (2012,02,02)-(2015,04,01)
             boolPeriodIncluded = life.boolIsPeriodIncluded(dateBeginNotIncludedAfter, dateEndNotIncludedAfter);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncludedAfter) + "-" +
-            Test.strToDisplay(dateEndNotIncludedAfter) + ") is included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncludedAfter, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncludedAfter, "dateEnd") + ") is included " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodIncluded, "boolPeriodIncluded"));
             sysswLog.WriteLine("-------------------------------------------------------------------------------------");
 
             //                                              //Prueba de boolIsPeriodIncluded(). Se prueba con un periodo
@@ -213,36 +213,36 @@ namespace Encompass
             //                                              //Prueba Para Periodo excluido previo
             //                                              //      Ejemplo: (2001,02,01)-(2002,01,31)
             bool boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginNotIncluded, dateEndNotIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndNotIncluded) + ") is not included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncluded, "dateEnd") + ") is not included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
 
             //                                              //Prueba para el periodo con inicio no incluído y final si
             //                                              //      incluído. (2001,02,01)-(2003,02,01)
             boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginNotIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is not included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is not included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
 
             //                                              //Prueba para el periodo incluído. (2002,02,01)-(2003,02,01)
             boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginIncluded, dateEndIncluded);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginIncluded) + "-" +
-            Test.strToDisplay(dateEndIncluded) + ") is not included in life (" + Test.strToDisplay(life) + "): " +
-            Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndIncluded, "dateEnd") + ") is not included in " + Test.strTo(life, "life") + ": " +
+            Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
 
             //                                              //Prueba para el periodo con inicio incluído y final no
             //                                              //      incluído. (2001,02,01)-(2003,02,01)
             boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginIncluded, dateEndNotIncludedAfter);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncluded) + "-" +
-            Test.strToDisplay(dateEndNotIncludedAfter) + ") is not included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncluded, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncludedAfter, "dateEnd") + ") is not included in " +
+            Test.strTo(life, "life") + ": " + Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
 
             //                                              //Prueba Para Periodo excluido posterior
             //                                              //      (2012,02,02)-(2015,04,01)
             boolPeriodNotIncluded = life.boolIsPeriodNotIncluded(dateBeginNotIncludedAfter, dateEndNotIncludedAfter);
-            sysswLog.WriteLine("Period (" + Test.strToDisplay(dateBeginNotIncludedAfter) + "-" +
-            Test.strToDisplay(dateEndNotIncludedAfter) + ") is not included in life (" +
-            Test.strToDisplay(life) + "): " + Test.strToDisplay(boolPeriodNotIncluded));
+            sysswLog.WriteLine("Period (" + Test.strTo(dateBeginNotIncludedAfter, "dateBegin") + "-" +
+            Test.strTo(dateEndNotIncludedAfter, "dateEnd") + ") is not included in " +
+            Test.strTo(life, "life") + ": " + Test.strTo(boolPeriodNotIncluded, "boolPeriodNotIncluded"));
             sysswLog.WriteLine("-------------------------------------------------------------------------------------");
 
             //                                          //Resumen de objetos en todas las pruebas
@@ -306,7 +306,7 @@ namespace Encompass
             DateTime seventhPeriodEnd = new DateTime(2014, 08, 29);
             life.subAddPeriod(seventhPeriodBegin, seventhPeriodEnd);
 
-            sysswLog.WriteLine("Life (" + Test.strToDisplay(life) + ")");
+            sysswLog.WriteLine(Test.strTo(life, "life"));
 
              DateTime periodToRemoveBegin = new DateTime(2010, 12, 01);
             DateTime periodToRemoveEnd = new DateTime(2011, 12, 01);
@@ -324,7 +324,7 @@ namespace Encompass
             periodToRemoveEnd = new DateTime(2016, 01, 31);
             life.subRemovePeriod(periodToRemoveBegin, periodToRemoveEnd);
 
-            sysswLog.WriteLine("Life (" + Test.strToDisplay(life) + ")");
+            sysswLog.WriteLine(Test.strTo(life, "life"));
 
             //                                          //Resumen de objetos en todas las pruebas
             BclassBaseClassAbstract.subWriteSummary(sysswLog);

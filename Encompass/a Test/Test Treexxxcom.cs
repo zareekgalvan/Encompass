@@ -85,7 +85,7 @@ namespace Encompass
                 tbsicom.setComponents.subAdd(tlvelenmx);
             }
 
-            sysswLog.WriteLine("tbsicom.setComponents (" + tbsicom.setComponents.ToString() + ")");
+            sysswLog.WriteLine(Test.strTo(tbsicom, "tbsicom"));
 
             //                                          //Resumen de objetos en todas las pruebas
             BclassBaseClassAbstract.subWriteSummary(sysswLog);

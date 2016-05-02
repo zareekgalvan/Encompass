@@ -39,7 +39,8 @@ namespace Encompass
 
             Encompass encompass = new Encompass(strPATHFILES);
 
-            sysswLog.WriteLine(Test.strToDisplay(encompass));
+            sysswLog.WriteLine(Test.strTo(encompass, "Encompass"));
+
             //                                          //Resumen de objetos en todas las pruebas
             BclassBaseClassAbstract.subWriteSummary(sysswLog);
 
