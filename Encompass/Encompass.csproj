@@ -57,6 +57,8 @@
     <Compile Include="a Test\Test Treexxxcom.cs" />
     <Compile Include="a Test\Test Treexxxlife.cs" />
     <Compile Include="a Test\Test treexxxorg.cs" />
+    <Compile Include="ESS %28Encompass Catalogs%29\ESS Treexxxcur Currency RP Spec.cs" />
+    <Compile Include="ESS %28Encompass Catalogs%29\ESS Treexxxcou Country RP Spec.cs" />
     <Compile Include="ESS %28Encompass Information%29\ESS Encompass RP Spec.cs" />
     <Compile Include="ESS %28Encompass Information%29\ESS Treexxxacc Accounts RP Spec.cs" />
     <Compile Include="ESS %28Encompass Information%29\ESS Treexxxboj BusinessObject RP Spec.cs" />
