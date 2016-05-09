@@ -47,13 +47,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tbmubob";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tbmubob";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -119,13 +129,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            const String strCLASS = "Tlveboj";
+            const String strCLASS = "Tlvebob";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tlvebob";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -176,13 +196,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tlveboj";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tlveboj";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -235,13 +265,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tlveboj";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tlveboj";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------

@@ -114,8 +114,7 @@ namespace EncompassInfrastructure
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
-                Test.strTo(this.strRfc, TestoptionEnum.SHORT) + "]";
+            return strObjId + "[" + Test.strTo(this.strRfc, TestoptionEnum.SHORT) + "]";
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -123,19 +122,8 @@ namespace EncompassInfrastructure
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "{" + Test.strTo(this.strRfc, TestoptionEnum.SHORT) + ", " +
+            return strObjId + "{" + Test.strTo(this.strRfc, "strRfc") +
                  "}" + "==>" + base.strTo();
-        }
-
-        //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
-        {
-            const String strCLASS = "Rfc";
-
-            String strToString =
-                strCLASS + "{" + Test.strTo(this.strRfc, "strRfc") + "}";
-
-            return strToString;
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -307,11 +295,23 @@ namespace EncompassInfrastructure
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Rfcpm";
 
-            return strCLASS + "{}" + "==>" + base.ToString();
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Rfcpm";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -405,11 +405,23 @@ namespace EncompassInfrastructure
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Rfcpf";
 
-            return strCLASS + "{}" + "==>" + base.ToString();
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Rfcpf";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------

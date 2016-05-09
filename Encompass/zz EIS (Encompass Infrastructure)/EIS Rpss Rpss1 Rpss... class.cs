@@ -44,8 +44,7 @@ namespace EncompassInfrastructure
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
-                Test.strTo(this.strRegistroPatronalImss, TestoptionEnum.SHORT) +  "]";
+            return strObjId + "[" + Test.strTo(this.strRegistroPatronalImss, TestoptionEnum.SHORT) +  "]";
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -53,19 +52,8 @@ namespace EncompassInfrastructure
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "{" + Test.strTo(this.strRegistroPatronalImss, TestoptionEnum.SHORT) + ", " +
+            return strObjId + "{" + Test.strTo(this.strRegistroPatronalImss, "strRegistroPatronalImss") +
                  "}" + "==>" + base.strTo();
-        }
-
-        //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
-        {
-            const String strCLASS = "T";
-
-            String strToString =
-                strCLASS + "{" + Test.strTo(this.strRegistroPatronalImss, "tBelongsTo") + "}";
-
-            return strToString;
         }
 
         //--------------------------------------------------------------------------------------------------------------

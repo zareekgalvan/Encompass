@@ -47,13 +47,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tbsicom";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tbsicom";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -111,13 +121,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tlvecom";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tlvecom";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -178,13 +198,19 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            const String strCLASS = "Tlvecommx";
+            String strObjId = Test.strGetObjId(this);
 
-            String strToString = strCLASS + "{}";
+            return strObjId + "[" + Test.strTo(this.rpss, TestoptionEnum.SHORT) +  "]";
+        }
 
-            return strToString + "==>" + base.ToString();
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "{" + Test.strTo(this.rpss, "rpss") + "}" + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------

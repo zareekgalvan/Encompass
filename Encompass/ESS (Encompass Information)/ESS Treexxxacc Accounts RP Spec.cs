@@ -60,15 +60,22 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            const String strCLASS = "Tbmucoa";
+            String strObjId = Test.strGetObjId(this);
 
-            String strToString = strCLASS + "{}";
-
-            return strToString + "==>" + base.ToString();
+            return strObjId + "[" + Test.strTo(this.tbmubaibalbalance, TestoptionEnum.SHORT) +
+                Test.strTo(this.tbmubaiinsIncomeStatement, TestoptionEnum.SHORT) + "]";
         }
 
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
+
+            return strObjId + "{" + Test.strTo(this.tbmubaibalbalance, "tbmubaibalbalance") +
+                Test.strTo(this.tbmubaiinsIncomeStatement, "tbmubaiinsIncomeStatement") +  "}" + "==>" + base.strTo();
+        }
         //--------------------------------------------------------------------------------------------------------------
 
         /*CONSTRUCTORS*/

@@ -45,13 +45,23 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
             const String strCLASS = "Tbsiorg";
 
             String strToString = strCLASS + "{}";
 
-            return strToString + "==>" + base.ToString();
+            return strToString + "==>" + base.strTo(TestoptionEnum.SHORT);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public override String strTo()
+        {
+            const String strCLASS = "Tbsiorg";
+
+            String strToString = strCLASS + "{}";
+
+            return strToString + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -127,22 +137,29 @@ namespace Encompass
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            const String strCLASS = "Tlveorg";
-            const String strCOLLECTION_A = "tbsicom";
+            String strObjId = Test.strGetObjId(this);
 
-            String strNL;
-            String strLabel;
+            return strObjId + "[" + //Test.strTo(this.tbmubobBusinessObject, TestoptionEnum.SHORT) +
+                //Test.strTo(this.tbmuaccAccounts, TestoptionEnum.SHORT) + 
+                Test.strTo(this.tbsicomCompany, TestoptionEnum.SHORT) +
+                //Test.strTo(this.tbmupolPolicy, TestoptionEnum.SHORT) +
+                //Test.strTo(this.tbmugleGeneralLedger, TestoptionEnum.SHORT) +
+                "]";
+        }
 
-            String strToString = strCLASS + "{";
-            strToString = strToString + strNL + ">>>>START_" + strLabel;
-            strToString = strToString + strNL + "end log " + strCOLLECTION_A;
-            strToString = strToString + strNL + "<<<<END_" + strLabel;
-            strToString = strToString + strNL + "}";
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
 
-
-            return strToString + "==>" + base.ToString();
+            return strObjId + "{" + //Test.strTo(this.tbmubobBusinessObject, "tbmubobBusinessObject") +
+                //Test.strTo(this.tbmuaccAccounts, "tbmuaccAccounts") +
+                Test.strTo(this.tbsicomCompany, "tbsicomCompany") +
+                //Test.strTo(this.tbmupolPolicy, "tbmupolPolicy") +
+                //Test.strTo(this.tbmugleGeneralLedger, "tbmugleGeneralLedger") + 
+                "}" + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------

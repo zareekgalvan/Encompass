@@ -46,8 +46,7 @@ namespace EncompassInfrastructure
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
-                Test.strTo(this.strNumeroAfiliacionImss, TestoptionEnum.SHORT) + "]";
+            return strObjId + "[" + Test.strTo(this.strNumeroAfiliacionImss, TestoptionEnum.SHORT) + "]";
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -55,19 +54,8 @@ namespace EncompassInfrastructure
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "{" + Test.strTo(this.strNumeroAfiliacionImss, TestoptionEnum.SHORT) + ", " +
+            return strObjId + "{" + Test.strTo(this.strNumeroAfiliacionImss, "strNumeroAfiliacionImss") +
                  "}" + "==>" + base.strTo();
-        }
-
-        //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
-        {
-            const String strCLASS = "Imss";
-
-            String strToString =
-                strCLASS + "{" + Test.strTo(this.strNumeroAfiliacionImss, "strNumeroAfiliacionImss") + "}";
-
-            return strToString;
         }
 
         //--------------------------------------------------------------------------------------------------------------

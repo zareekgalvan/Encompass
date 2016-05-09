@@ -183,8 +183,8 @@ namespace AllInMemoryBase
 
             return strObjId + "[" + base.strTo(TestoptionEnum.SHORT) + ", " +
                 Test.strTo(this.tBelongsTo, TestoptionEnum.SHORT) + ", " +
-                Test.strTo(this.life, TestoptionEnum.SHORT) + ", " + Test.strTo(this.strId, TestoptionEnum.SHORT) + ", " +
-                Test.strTo(this.strDescription, TestoptionEnum.SHORT) + ", " +
+                Test.strTo(this.life, TestoptionEnum.SHORT) + ", " + Test.strTo(this.strId, TestoptionEnum.SHORT) + 
+                ", " + Test.strTo(this.strDescription, TestoptionEnum.SHORT) + ", " +
                 Test.strTo(this.strObservations, TestoptionEnum.SHORT) + "]";
         }
 

@@ -7,3 +7,9 @@
 C:\Users\AngelGonzalez\Downloads\Encompass-master\Encompass-master\Encompass\obj\x86\Debug\Encompass.csprojResolveAssemblyReference.cache
 C:\Users\AngelGonzalez\Downloads\Encompass-master\Encompass-master\Encompass\obj\x86\Debug\Encompass.frmPrueba.resources
 C:\Users\AngelGonzalez\Downloads\Encompass-master\Encompass-master\Encompass\obj\x86\Debug\Encompass.csproj.GenerateResource.Cache
+C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\obj\x86\Debug\Encompass.frmPrueba.resources
+C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\obj\x86\Debug\Encompass.csproj.GenerateResource.Cache
+C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\bin\Debug\WindowsApplication.exe
+C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\bin\Debug\WindowsApplication.pdb
+C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\obj\x86\Debug\WindowsApplication.exe
+C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\obj\x86\Debug\WindowsApplication.pdb

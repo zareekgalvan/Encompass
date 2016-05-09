@@ -46,24 +46,20 @@ namespace Encompass
         }
         
         //--------------------------------------------------------------------------------------------------------------
-        public override String ToString()
+        public override String strTo(TestoptionEnum testoptionSHORT_I)
         {
-            const String strCLASS = "Encompass";
-            const String strCOLLECTION_A = "tbsiorg";
+            String strObjId = Test.strGetObjId(this);
 
-            String strNL;
-            String strLabel;
-            //Test. subToStringStart(out strNL, out strLabel);
+            return strObjId + "[" + Test.strTo(this.tbsiorgOrganization, TestoptionEnum.SHORT) + "]";
+        }
 
-            String strToString = strCLASS + "{";
-            strToString = strToString + strNL + ">>>>START_" + strLabel;
-            strToString = strToString + strNL + "end log " + strCOLLECTION_A;
-            strToString = strToString + strNL + "<<<<END_" + strLabel;
-            strToString = strToString + strNL + "}";
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        public override String strTo()
+        {
+            String strObjId = Test.strGetObjId(this);
 
-            //Test.subToStringEnd(out strNL);
-
-            return strToString + "==>" + base.ToString();
+            return strObjId + "{" + Test.strTo(this.tbsiorgOrganization, "tbsiorgOrganization") + "}" + "==>" +
+                base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------
