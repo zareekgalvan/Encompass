@@ -30,13 +30,14 @@ namespace EncompassInfrastructure
         //                                                  //Identificación de un patrón (persona física o moral que
         //                                                  //      tiene empleados) ante el IMSS.
         //                                                  //Se forma con una letra (indica la región, Monterrey es Y)
-        //                                                  //      10 dígitos.
+        //                                                  //      y 10 dígitos.
         private readonly String strRegistroPatronalImss_Z;
         public String strRegistroPatronalImss { get { return this.strRegistroPatronalImss_Z; } }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         internal void subReset()
         {
+            base.subReset();
         }
 
         //--------------------------------------------------------------------------------------------------------------

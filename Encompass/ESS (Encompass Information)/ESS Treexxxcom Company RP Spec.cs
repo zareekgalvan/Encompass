@@ -19,7 +19,7 @@ namespace Encompass
 {
     //==================================================================================================================
     public partial class TbsicomCompany : TbsiSingleRootAbstract
-    //                                                      //Clase especifica para el nodo que agrupa todas las
+    //                                                      //Clase específica para el nodo que agrupa todas las
     //                                                      //      Compañías.
     //                                                      //Una organización (Ej. Towa) opera en un conjunto de
     //                                                      //      Sociedades Mercantiles a las cuales llamaremos
@@ -202,7 +202,8 @@ namespace Encompass
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "[" + Test.strTo(this.rpss, TestoptionEnum.SHORT) +  "]";
+            return strObjId + "[" + Test.strTo(this.rfcpm, TestoptionEnum.SHORT) +
+                Test.strTo(this.rpss, TestoptionEnum.SHORT) + "]";
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -210,7 +211,8 @@ namespace Encompass
         {
             String strObjId = Test.strGetObjId(this);
 
-            return strObjId + "{" + Test.strTo(this.rpss, "rpss") + "}" + "==>" + base.strTo();
+            return strObjId + "{" + Test.strTo(this.rfcpm, "rpss") + ", " +
+                Test.strTo(this.rpss, "rpss") + "}" + "==>" + base.strTo();
         }
 
         //--------------------------------------------------------------------------------------------------------------

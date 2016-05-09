@@ -39,6 +39,7 @@ namespace EncompassInfrastructure
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         internal void subReset()
         {
+            base.subReset();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -72,18 +73,16 @@ namespace EncompassInfrastructure
                 !ImssNumeroAfiliacionImss.boolIsValid(this.strNumeroAfiliacionImss)
                 )
                 Tools.subAbort(Test.strTo(strNumeroAfiliacionImss, TestoptionEnum.SHORT) +
-                    ") es invalido");
+                    ") es inválido");
 
             this.strNumeroAfiliacionImss_Z = strNumeroAfiliacionImss_I;
         }
 
         /*OTHER SUPORT METHODS*/
         //--------------------------------------------------------------------------------------------------------------
-        public static bool boolIsValid(                     //Determina si parece ser valida la estructura del IMSS de
+        public static bool boolIsValid(                     //Determina si parece ser válida la estructura del IMSS de
             //                                              //      Persona (Ej. 99023759281).
-            //                                              //1. La parte incial "9" debe contener solo caracteres
-            //                                              //      útiles para la parte inicial.
-            //                                              //2. La parte númerica "9023759281" debe contener solo
+            //                                              //1.    La estructura "99023759281" debe contener solo
             //                                              //      números.
 
             //                                              //String a validar.
