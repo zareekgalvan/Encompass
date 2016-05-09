@@ -13,3 +13,5 @@ C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\bin\Debug\WindowsApp
 C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\bin\Debug\WindowsApplication.pdb
 C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\obj\x86\Debug\WindowsApplication.exe
 C:\Users\AngelGonzalez\Documents\GitHub\Encompass\Encompass\obj\x86\Debug\WindowsApplication.pdb
+\\Mac\Home\Desktop\Encompass\Encompass\obj\x86\Debug\WindowsApplication.exe
+\\Mac\Home\Desktop\Encompass\Encompass\obj\x86\Debug\WindowsApplication.pdb
