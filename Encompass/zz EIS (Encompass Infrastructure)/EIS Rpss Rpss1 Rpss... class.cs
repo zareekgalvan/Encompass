@@ -35,7 +35,7 @@ namespace EncompassInfrastructure
         public String strRegistroPatronalImss { get { return this.strRegistroPatronalImss_Z; } }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        internal void subReset()
+        internal new void subReset()
         {
             base.subReset();
         }

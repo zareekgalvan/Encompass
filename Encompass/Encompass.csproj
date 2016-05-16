@@ -52,7 +52,6 @@
     <Compile Include="a Test\ProgramTest.Designer.cs">
       <DependentUpon>ProgramTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="a Test\Test csv.cs" />
     <Compile Include="a Test\Test Encompass.cs" />
     <Compile Include="a Test\Test Treexxxcom.cs" />
     <Compile Include="a Test\Test Treexxxlife.cs" />

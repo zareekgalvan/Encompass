@@ -105,7 +105,7 @@ namespace EncompassInfrastructure
         internal String strRfc { get { return strRfc_Z; } }
 
         //--------------------------------------------------------------------------------------------------------------
-        internal void subReset()
+        internal new void subReset()
         {
             base.subReset();
         }
