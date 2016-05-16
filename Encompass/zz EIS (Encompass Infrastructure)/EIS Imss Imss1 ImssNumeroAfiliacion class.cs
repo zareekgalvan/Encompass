@@ -37,7 +37,7 @@ namespace EncompassInfrastructure
         public String strNumeroAfiliacionImss { get { return this.strNumeroAfiliacionImss_Z; } }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        internal void subReset()
+        internal new void subReset()
         {
             base.subReset();
         }
